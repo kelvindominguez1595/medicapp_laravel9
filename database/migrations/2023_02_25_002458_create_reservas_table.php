@@ -20,7 +20,7 @@ return new class extends Migration
             $table->longText('descripcion')->nullable();
             $table->unsignedBigInteger('paciente_id');
             $table->integer('doctor_id');
-            $table->foreign('users_id')->references('id')->on('categorias')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('paciente_id')->references('id')->on('categorias')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
