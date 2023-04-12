@@ -1,8 +1,6 @@
-@extends('layout/plantilla')
-@section('titulopagina', 'proveedores')
+@extends('layouts.template')
+@section('content')
 
-@section('contenido')
-<br><br>
 
 <div class="card">
     <h5 class="card-header">Proveedores</h5>
