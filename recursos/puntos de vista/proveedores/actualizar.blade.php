@@ -1,7 +1,5 @@
-@extends('layout/plantilla')
-
-@section("titulopagina", "Actualizar proveedor")
-@section('contenido')
+@extends('layouts.template')
+@section('content')
 
 <div class="card">
     <div class="card-body">
