@@ -1,7 +1,6 @@
 @extends('layouts.template')
 @section('content')
 
-
 <div class="card">
     <h5 class="card-header">Proveedores</h5>
     <div class="card-body">
