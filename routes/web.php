@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GenerosController;
 use App\Http\Controllers\ProveedoresController;
 use App\Models\Proveedores;
 use Illuminate\Support\Facades\Route;
@@ -23,3 +24,11 @@ Route::get('/show/{id}', [ProveedoresController::class, 'show'])->name('proveedo
 Route::post('/store', [ProveedoresController::class, 'store'])->name('proveedores.store');
 Route::put('/update/{id}', [ProveedoresController::class, 'update'])->name('proveedores.update');
 Route::delete('/destroy/{id}', [ProveedoresController::class, 'destroy'])->name('proveedores.destroy');
+
+//RUTAS PARA GENEROS
+Route::get('/generos', [GenerosController::class, 'index'])->name('generos.index'); //listar
+Route::get('/generos/create', [GenerosController::class, 'create'])->name('generos.create'); //form crear
+Route::post('/generos/store', [GenerosController::class, 'store'])->name('generos.store'); //functGuardar
+Route::delete('generos/destroy/{id}', [GenerosController::class, 'destroy'])->name('generos.destroy'); //eliminar
+Route::get('generos/edit/{id}', [GenerosController::class, 'edit'])->name('generos.edit'); //vistActualizar
+Route::put('generos/update/{id}', [GenerosController::class, 'update'])->name('generos.update'); //functActualizar

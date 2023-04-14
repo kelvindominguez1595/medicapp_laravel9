@@ -14,6 +14,9 @@
                     <a class="nav-link" href="proveedores.index">Proveedores</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{route("generos.index")}}">Generos</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#">Pricing</a>
                 </li>
                 <li class="nav-item">
