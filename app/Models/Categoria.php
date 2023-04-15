@@ -14,5 +14,5 @@ class Categoria extends EloquentModel
  protected $primaryKey = "cod_categoria";
  protected $fillable = ["titulo"];
 
- public $timestamps=false;
+ public $timestamps=true;
 }
