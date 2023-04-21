@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProveedoresController;
 use App\Models\Proveedores;
+use App\Http\Controllers\CategoriaController;
+use App\Models\Categoria;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +25,5 @@ Route::get('/show/{id}', [ProveedoresController::class, 'show'])->name('proveedo
 Route::post('/store', [ProveedoresController::class, 'store'])->name('proveedores.store');
 Route::put('/update/{id}', [ProveedoresController::class, 'update'])->name('proveedores.update');
 Route::delete('/destroy/{id}', [ProveedoresController::class, 'destroy'])->name('proveedores.destroy');
+
+Route::resources("categorias",CategoriaController::class);

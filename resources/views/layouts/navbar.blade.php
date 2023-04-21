@@ -13,6 +13,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="proveedores.index">Proveedores</a>
                 </li>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route("categorias.index")}}">Categorias</a>
+                    </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Pricing</a>
                 </li>
