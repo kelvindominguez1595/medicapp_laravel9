@@ -3,6 +3,8 @@
 use App\Http\Controllers\GenerosController;
 use App\Http\Controllers\ProveedoresController;
 use App\Models\Proveedores;
+use App\Http\Controllers\CategoriaController;
+use App\Models\Categoria;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,3 +34,4 @@ Route::post('/generos/store', [GenerosController::class, 'store'])->name('genero
 Route::delete('generos/destroy/{id}', [GenerosController::class, 'destroy'])->name('generos.destroy'); //eliminar
 Route::get('generos/edit/{id}', [GenerosController::class, 'edit'])->name('generos.edit'); //vistActualizar
 Route::put('generos/update/{id}', [GenerosController::class, 'update'])->name('generos.update'); //functActualizar
+Route::resources("categorias",CategoriaController::class);
