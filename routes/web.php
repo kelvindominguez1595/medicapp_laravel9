@@ -34,4 +34,4 @@ Route::post('/generos/store', [GenerosController::class, 'store'])->name('genero
 Route::delete('generos/destroy/{id}', [GenerosController::class, 'destroy'])->name('generos.destroy'); //eliminar
 Route::get('generos/edit/{id}', [GenerosController::class, 'edit'])->name('generos.edit'); //vistActualizar
 Route::put('generos/update/{id}', [GenerosController::class, 'update'])->name('generos.update'); //functActualizar
-Route::resources("categorias",CategoriaController::class);
+Route::resource("categorias",CategoriaController::class);
