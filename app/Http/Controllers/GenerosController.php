@@ -14,7 +14,8 @@ class GenerosController extends Controller
      */
     public function index()
     {
-        //
+        $datos = Generos::all();        
+        return view('generos.index', compact('datos'));
     }
 
     /**
@@ -25,6 +26,7 @@ class GenerosController extends Controller
     public function create()
     {
         //
+        return view('generos.agregar');
     }
 
     /**
@@ -36,6 +38,11 @@ class GenerosController extends Controller
     public function store(Request $request)
     {
         //
+        $genero = new Generos();
+        $genero->genero = $request->post('genero');
+        $genero->save();
+
+        return redirect()->route("generos.index")->with("success", "Agregado con exito");
     }
 
     /**
@@ -55,9 +62,11 @@ class GenerosController extends Controller
      * @param  \App\Models\Generos  $generos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Generos $generos)
+    public function edit($id_genero)
     {
         //
+        $generos = Generos::find($id_genero);
+        return view('generos.actualizar', compact('generos'));
     }
 
     /**
@@ -67,9 +76,14 @@ class GenerosController extends Controller
      * @param  \App\Models\Generos  $generos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Generos $generos)
+    public function update(Request $request, $id)
     {
         //
+        $generos = Generos::find($id);
+        $generos->genero = $request->post('genero');
+        $generos->save();
+
+        return redirect()->route("generos.index")->with("success", "Información actualizada");
     }
 
     /**
@@ -78,8 +92,11 @@ class GenerosController extends Controller
      * @param  \App\Models\Generos  $generos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Generos $generos)
+    public function destroy($id_genero)
     {
-        //
+        //        
+        $genero = Generos::find($id_genero);
+        $genero->delete();
+        return redirect()->route("generos.index")->with("success", "Registro eliminado.");
     }
 }

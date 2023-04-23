@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use App\Models\Categoria;
-use Iluminate\Http\Request;
+use Illuminate\Http\Request;
 
 
 class CategoriaController extends Controller
@@ -15,7 +15,7 @@ class CategoriaController extends Controller
 
     public function create()
     {
-        return view(Categorias.create);
+        return view('Categorias.create');
     }
     //actualizar registro??
     public function store(Request $request)
