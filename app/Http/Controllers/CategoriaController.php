@@ -1,7 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 use App\Models\Categoria;
-use Iluminate\Http\Request;
+use App\Models\Categorias;
+use Illuminate\Http\Request;
 
 
 class CategoriaController extends Controller
@@ -9,43 +10,43 @@ class CategoriaController extends Controller
     //método index
     public function index()
     {
-        $categorias = Categoria::orderBy("cod_categoria", "DESC")->paginate(5);
+        $categorias = Categorias::orderBy("id", "DESC")->paginate(5);
         return view("categorias.index",["categorias" =>$categorias]);
     }
 
     public function create()
     {
-        return view(Categorias.create);
+        return view("Categorias.create");
     }
     //actualizar registro??
     public function store(Request $request)
     {
         $request->validate([
-            "titulo"=> "required|min:3|max:100|unique:categorias"
+            "categoria"=> "required|min:3|max:100|unique:categorias"
         ]);
-        Categoria::create($request->all());
+        Categorias::create($request->all());
         return redirect()
         ->route("categorias.index")
         ->with ("success", "Categoria registrada correctamente");
     }
     //Realizar una consulta de un elemento en la bd por medio del modelo
-    public function show(Categoria $categoria)
+    public function show(Categorias $categoria)
     {
         return view("categorias.show", ["categoria"=>$categoria]);
     }
 
-    public function edit(Categoria $categoria)
+    public function edit(Categorias $categoria)
     {
         return view("categorias.edit", ["categoria"=>$categoria]);
     }
 
-    public function update(Request $request, Categoria $categoria)
+    public function update(Request $request, Categorias $categoria)
     {
         $request->validate([
-            "titulo"=> "required|min:3|max:100!unique:categorias,titulo,".$categoria->cod_categoria.",cod_categoria"
+            "categoria"=> "required|min:3|max:100!unique:categorias,categoria,".$categoria->id.",id"
         ]);
         $categoria->fill($request->only([
-            "titulo"
+            "categoria"
         ]));
         if($categoria->isClean()){
             return back()->with("warning", "Debe realizar al menos un cambio para actualizar la categoria");
@@ -54,7 +55,7 @@ class CategoriaController extends Controller
         return back()->with("sucess","Categoria actulizada correctamente");
     }
 
-    public function destroy(Categoria $categoria)
+    public function destroy(Categorias $categoria)
     {
         $categoria->delete();
         return back()->with ("danger","Categoria Eliminada");

@@ -26,4 +26,4 @@ Route::post('/store', [ProveedoresController::class, 'store'])->name('proveedore
 Route::put('/update/{id}', [ProveedoresController::class, 'update'])->name('proveedores.update');
 Route::delete('/destroy/{id}', [ProveedoresController::class, 'destroy'])->name('proveedores.destroy');
 
-Route::resources("categorias",CategoriaController::class);
+Route::resource("categorias",CategoriaController::class);
