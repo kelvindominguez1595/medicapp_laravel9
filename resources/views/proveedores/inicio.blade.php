@@ -11,7 +11,6 @@
                     {{$mensaje }}
                   </div> 
                 @endif
-
             </div>
         </div>
         <p>

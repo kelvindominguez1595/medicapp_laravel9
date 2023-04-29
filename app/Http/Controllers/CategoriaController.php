@@ -1,6 +1,5 @@
 <?php
 namespace App\Http\Controllers;
-use App\Models\Categoria;
 use App\Models\Categorias;
 use Illuminate\Http\Request;
 
