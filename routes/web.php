@@ -26,7 +26,7 @@ Route::get('/show/{id}', [ProveedoresController::class, 'show'])->name('proveedo
 Route::post('/store', [ProveedoresController::class, 'store'])->name('proveedores.store');
 Route::put('/update/{id}', [ProveedoresController::class, 'update'])->name('proveedores.update');
 Route::delete('/destroy/{id}', [ProveedoresController::class, 'destroy'])->name('proveedores.destroy');
-
+Route::resource("categorias",CategoriaController::class);
 //RUTAS PARA GENEROS
 Route::get('/generos', [GenerosController::class, 'index'])->name('generos.index'); //listar
 Route::get('/generos/create', [GenerosController::class, 'create'])->name('generos.create'); //form crear
@@ -35,3 +35,4 @@ Route::delete('generos/destroy/{id}', [GenerosController::class, 'destroy'])->na
 Route::get('generos/edit/{id}', [GenerosController::class, 'edit'])->name('generos.edit'); //vistActualizar
 Route::put('generos/update/{id}', [GenerosController::class, 'update'])->name('generos.update'); //functActualizar
 Route::resource("categorias",CategoriaController::class);
+

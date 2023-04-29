@@ -21,9 +21,9 @@
                 @csrf
                 @method("PUT")
                 <div class="col-md-6">
-                    <label for="titulo" class="form-label"> Titulo de la Categoria</label>
-            <input type="text" class="form-control shadow-none" id="titulo" name="titulo" value="{{old("titulo", $categoria->titulo)}}">
-            @error("titulo")
+                    <label for="categoria" class="form-label"> Titulo de la Categoria</label>
+            <input type="text" class="form-control shadow-none" id="categoria" name="categoria" value="{{old("categoria", $categoria->categoria)}}">
+            @error("categoria")
             <small class="text-danger">
                 {{$message}}
             </small>
