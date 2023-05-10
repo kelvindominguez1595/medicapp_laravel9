@@ -46,7 +46,7 @@
 
                                     @method("Delete")
                                     <button  id="delete" name="delete" type="submit" class="btn btn-danger btn-sn shadow-none"
-                                    data-toggle="tooltip" data-placement="top" title="Eliminar Categoria" onclick="return confirm('¿Estas seguro que vas eliminar esta categoria?')" role="button"> Ver
+                                    data-toggle="tooltip" data-placement="top" title="Eliminar Categoria" onclick="return confirm('¿Estas seguro que vas eliminar esta categoria?')" role="button"> Eliminar
                                     <i class="fa fa-trash fa-fw"></i>
                                     </button>
                                 </form>

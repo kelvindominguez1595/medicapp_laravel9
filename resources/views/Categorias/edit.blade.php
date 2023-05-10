@@ -11,7 +11,7 @@
 
         <div class="col-md-12">
             <div class="pull-right">
-                <a class="btn btn-primary shadow-none" data-toggle="tooltip" data-placement="top" title="Inicio" href="{{route("categorias.index")}}">
+                <a class="btn btn-primary shadow-none" data-toggle="tooltip" data-placement="top" title="Inicio" href="{{route("categorias.index")}}" role="button">Inicio
                     <i class="fa fa-home fa-fw"></i>
                 </a>
             </div>
