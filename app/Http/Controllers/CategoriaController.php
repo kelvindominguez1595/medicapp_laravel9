@@ -42,7 +42,7 @@ class CategoriaController extends Controller
     public function update(Request $request, Categorias $categoria)
     {
         $request->validate([
-            "categoria"=> "required|min:3|max:100!unique:categorias,categoria,".$categoria->id.",id"
+            "categoria"=> "required|min:3|max:100|unique:categorias,categoria,".$categoria->id.",id"
         ]);
         $categoria->fill($request->only([
             "categoria"
