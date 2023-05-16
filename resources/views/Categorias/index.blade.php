@@ -34,11 +34,11 @@
                         @foreach($categorias as $categoria)
                         <tr>
                             <td class="text-center" width="20%">
-                                <a href="{{route("categorias.show", $categoria)}}" class="btn btn-primary btn-sn shadow-none" data-toggle="tooltip" data-placement="top" title="Ver Categoria">
+                                <a href="{{route("categorias.show", $categoria)}}" class="btn btn-primary btn-sn shadow-none" data-toggle="tooltip" data-placement="top" title="Ver Categoria" role="button"> Ver
                                     <i class="fa fa-book fa-fw text-while"></i>
                                 </a>
                                 
-                                <a href="{{route("categorias.edit", $categoria)}}" class="btn btn-success btn-sn shadow-none" data-toggle="tooltip" data-placement="top" title="Editar Categoria">
+                                <a href="{{route("categorias.edit", $categoria)}}" class="btn btn-success btn-sn shadow-none" data-toggle="tooltip" data-placement="top" title="Editar Categoria" role="button"> Editar
                                     <i class="fa fa-pencil fa-fw text-while"></i>
                                 </a>
                                 <form action="{{route("categorias.destroy",$categoria)}}" method="POST" class="d-inline-block">
@@ -46,7 +46,7 @@
 
                                     @method("Delete")
                                     <button  id="delete" name="delete" type="submit" class="btn btn-danger btn-sn shadow-none"
-                                    data-toggle="tooltip" data-placement="top" title="Eliminar Categoria" onclick="return confirm('¿Estas seguro que vas eliminar esta categoria?')">
+                                    data-toggle="tooltip" data-placement="top" title="Eliminar Categoria" onclick="return confirm('¿Estas seguro que vas eliminar esta categoria?')" role="button"> Eliminar
                                     <i class="fa fa-trash fa-fw"></i>
                                     </button>
                                 </form>
