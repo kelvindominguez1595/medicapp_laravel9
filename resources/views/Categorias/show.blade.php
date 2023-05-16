@@ -16,7 +16,7 @@
                     Categoria
                 </div>
                 <div class="card-body text center">
-                    <h5 class="card-title"><b>{{$categoria->titulo}}</b></h5>
+                    <h5 class="card-title"><b>{{$categoria->categoria}}</b></h5>
                 </div>
             </div>
         </div>

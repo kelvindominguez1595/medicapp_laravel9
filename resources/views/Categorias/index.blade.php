@@ -14,7 +14,7 @@
         @endif
         <div class="col-md-12">
             <div class="pull-right">
-                <a class="btn btn-primary shadow-none" data-toggle="tooltip" data-placement="top" title="Agregar Categoria" href="{{route("categorias.create")}}">
+                <a class="btn btn-primary shadow-none" data-toggle="tooltip" data-placement="top" title="Agregar Categoria" href="{{route("categorias.create")}}" role="button"> Agregar Categoria
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
@@ -51,8 +51,8 @@
                                     </button>
                                 </form>
                             </td>
-                            <td scope="row">{{$categoria->cod_categoria}}</td>
-                            <td scope="row">{{$categoria->titulo}}</td>
+                            <td scope="row">{{$categoria->id}}</td>
+                            <td scope="row">{{$categoria->categoria}}</td>
                         </tr>
                         @endforeach
                     </tbody>
