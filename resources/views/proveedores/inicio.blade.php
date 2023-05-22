@@ -17,7 +17,6 @@
             <a href="{{ route("proveedores.create")}}" class="btn btn-primary">Agregar proveedores</a>
           </p>
           <hr>
-      <h5 class="card-title">Listado de los proveedores</h5>
       <p>
         <div class="table table-responsive">
             <table class="table table-sm table-bordered">

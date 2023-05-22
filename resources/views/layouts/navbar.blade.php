@@ -10,9 +10,6 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route("proveedores.index")}}">Proveedores</a>
-                </li>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="{{route("categorias.index")}}">Categorias</a>
@@ -21,7 +18,10 @@
                     <a class="nav-link" href="{{route("generos.index")}}">Generos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link" href="{{route("proveedores.index")}}">Proveedores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route("productos.index")}}">Productos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled">Disabled</a>
