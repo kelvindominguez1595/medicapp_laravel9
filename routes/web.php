@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\GenerosController;
 use App\Http\Controllers\ProveedoresController;
 use App\Http\Controllers\Auth\LoginController;
@@ -42,9 +43,9 @@ Route::get('/usuarios/create', [UserController::class, 'create'])->name('usuario
 Route::get('usuarios/edit/{id}', [UserController::class, 'edit'])->name('usuarios.edit'); // vistActualizar
 
 // RUTAS PARA ROLES
-Route::get('/roles', [UserController::class, 'index'])->name('roles.index'); // listar
-Route::get('/roles/create', [UserController::class, 'create'])->name('roles.index'); // form crea
-Route::get('roles/edit/{id}', [UserController::class, 'edit'])->name('roles.index'); // vistActualizar
+Route::get('/roles', [RoleController::class, 'index'])->name('roles.index'); // listar
+Route::get('/roles/create', [RoleController::class, 'create'])->name('roles.index'); // form crea
+Route::get('roles/edit/{id}', [RoleController::class, 'edit'])->name('roles.index'); // vistActualizar
 });
 
 

@@ -43,7 +43,7 @@
     </td>
     <td>
       
-       <a class="btn btn-primary" href="{{ route('usuarios.edit',$user->id) }}">Edit</a>
+       <a class="btn btn-primary" href="{{ route('usuarios.edit',$user->id) }}">Editar</a>
         
     </td>
   </tr>
