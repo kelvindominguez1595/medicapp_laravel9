@@ -3,7 +3,7 @@
 
 <div class="card">
     <div class="card-body">
-      <h5 class="card-title">Actualizar Proveedores</h5>
+      <h5 class="card-title">Actualizar género.</h5>
       <p class="card-text">
         <form action="{{ route('generos.update', $generos->id)}}" method="POST">
           @csrf
