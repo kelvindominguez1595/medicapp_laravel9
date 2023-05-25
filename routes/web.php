@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\GenerosController;
 use App\Http\Controllers\ProveedoresController;
 use App\Http\Controllers\Auth\LoginController;
@@ -34,6 +35,16 @@ Route::delete('generos/destroy/{id}', [GenerosController::class, 'destroy'])->na
 Route::get('generos/edit/{id}', [GenerosController::class, 'edit'])->name('generos.edit'); // vistActualizar
 Route::put('generos/update/{id}', [GenerosController::class, 'update'])->name('generos.update'); // functActualizar
 Route::resource('categorias', CategoriaController::class);
+
+// RUTAS PARA USUARIOS
+Route::get('/usuarios', [UserController::class, 'index'])->name('usuarios.index'); // listar
+Route::get('/usuarios/create', [UserController::class, 'create'])->name('usuarios.create'); // form crea
+Route::get('usuarios/edit/{id}', [UserController::class, 'edit'])->name('usuarios.edit'); // vistActualizar
+
+// RUTAS PARA ROLES
+Route::get('/roles', [UserController::class, 'index'])->name('roles.index'); // listar
+Route::get('/roles/create', [UserController::class, 'create'])->name('roles.index'); // form crea
+Route::get('roles/edit/{id}', [UserController::class, 'edit'])->name('roles.index'); // vistActualizar
 });
 
 
