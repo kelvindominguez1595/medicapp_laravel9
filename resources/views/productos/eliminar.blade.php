@@ -10,9 +10,7 @@
             <table class="table table-sm table-hover table-bordered">
                 <thead>
                     <th>Categoria</th>
-                    <th>Marca</th>
                     <th>Producto</th>
-                    <th>Imagen</th>
                     <th>cantidad</th>
                     <th>antidad Minima</th>
                     <th>Estado</th>
@@ -23,9 +21,7 @@
                 <tbody>
                     <tr>
                         <td>{{$productos->categorias_id}}</td>
-                        <td>{{$productos->marcas_id}}</td>
                         <td>{{$productos->producto}}</td>
-                        <td>{{$productos->image}}</td>
                         <td>{{$productos->cantidad}}</td>
                         <td>{{$productos->cantidad_minima}}</td>
                         <td>{{$productos->estado}}</td>

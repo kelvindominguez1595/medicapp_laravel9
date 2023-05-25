@@ -8,14 +8,13 @@
         <form action="{{ route('productos.update', $productos->id)}}" method="POST">
           @csrf
           @method("PUT")
-            <label for="">Categoria</label>
-            <input type="text" name="categorias_id" class="form-control" required value="{{$productos->categorias_id}}">
-            <label for="">Marca</label>
-            <input type="text" name="marcas_id" class="form-control" required value="{{$productos->marcas_id}}">
+          <select name="categorias_id">
+                  @foreach($categorias as $item)
+                     <option  value="{{ $item->id }}">{{ $item->categoria}}</option>
+                  @endforeach
+               </select><br><br>
             <label for="">Producto</label>
             <input type="text" name="producto" class="form-control" required value="{{$productos->producto}}">
-            <label for="">Imagen</label>
-            <input type="text" name="image" class="form-control" required value="{{$productos->image}}">
             <label for="">cantidad</label>
             <input type="text" name="cantidad" class="form-control" required value="{{$productos->cantidad}}">
             <label for="">Cantidad Minima</label>

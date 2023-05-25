@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Productos;
-use App\Models\Categoria;
+use App\Models\Categorias;
 use Illuminate\Http\Request;
 
 class ProductosController extends Controller
@@ -18,40 +18,35 @@ class ProductosController extends Controller
     
     public function create()
     {
-        //form agregar datos
-        return view('productos/agregar');
+       //form agregar datos
+       $categorias = Categorias::all();
+       return view('productos/agregar', compact('categorias'));
     }
 
     
     public function store(Request $request)
     {
 
-
-        
         //guardar datos bd
-        $categoria_id = $request->input("categoria_id");
-        $marcas_id = $request->input("marcas_id");
-        $productos = $request->input("productos");
-        $image = $request->input("image");
-        $cantidad = $request->input("cantidad");
-        $cantidad_minima = $request->input("cantidad_minima");
-        $estado = $request->input("estado");
-        $numero_lote = $request->input("numero_lote");
-        $fecha_expiracion = $request->input("fecha_expiracion");
-        $precio_venta = $request->input("precio_venta");
+        $categorias_id = $request->categorias_id;
+        $producto = $request->producto;
+        $cantidad = $request->cantidad;
+        $cantidad_minima = $request->cantidad_minima;
+        $estado = $request->estado;
+        $numero_lote = $request->numero_lote;
+        $fecha_expiracion = $request->fecha_expiracion;
+        $precio_venta = $request->precio_venta;
 
         $productos = new Productos;
-        $categorias = Categoria::puck('id','categoria');
        
-        $productos->categoria_id = $categoria_id;
-        $productos->marcas = $marcas_id;
-        $productos->productos = $productos;
-        $productos->image = $image;
+        $productos->categorias_id = $categorias_id;
+        $productos->producto = $producto;
         $productos->cantidad = $cantidad;
         $productos->cantidad_minima = $cantidad_minima;
         $productos->estado = $estado;
         $productos->numero_lote = $numero_lote;
         $productos->fecha_expiracion = $fecha_expiracion;
+        $productos->precio_venta = $precio_venta;
         $productos->save();
 
         return redirect()->route("productos.index")->with("success", "Agregado con exito");
@@ -71,8 +66,9 @@ class ProductosController extends Controller
     public function edit($id)
     {
         //sirve para traer los datos a editar
+        $categorias = Categorias::all();
         $productos = Productos::find($id);
-        return view('productos/actualizar', compact('productos'));
+        return view('productos/actualizar', compact('productos', 'categorias'));
 
     }
 
@@ -81,17 +77,16 @@ class ProductosController extends Controller
     {
         //actualiza llos datos en la bd
         $productos = Productos::find($id);
-        $productos->categorias_id = $request->post('categorias_id');
-        $productos->marcas_id = $request->post('marcas_id');
-        $productos->producto = $request->post('producto');
-        $productos->image = $request->post('image');
-        $productos->cantidad = $request->post('cantidad');
-        $productos->cantidad_minima = $request->post('cantidad_minima');
-        $productos->estado = $request->post('estado');
-        $productos->numero_lote = $request->post('numero_lote');
-        $productos->fecha_expiracion = $request->post('fecha_expiracion');
-        $productos->precio_venta = $request->post('precio_venta');
+        $productos->categorias_id = $request->categorias_id;
+        $productos->producto = $request->producto;
+        $productos->cantidad = $request->cantidad;
+        $productos->cantidad_minima = $request->cantidad_minima;
+        $productos->estado = $request->estado;
+        $productos->numero_lote = $request->numero_lote;
+        $productos->fecha_expiracion = $request->fecha_expiracion;
+        $productos->precio_venta = $request->precio_venta;
         $productos->save();
+        return redirect()->route("productos.index")->with("success", "Agregado con exito");
     }
 
     public function destroy($id)

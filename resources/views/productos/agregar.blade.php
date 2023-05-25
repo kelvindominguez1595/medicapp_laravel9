@@ -4,24 +4,18 @@
 <div class="card">
     <div class="card-body">
       <h5 class="card-title">Agregar Productos</h5>
-      <p class="card-text">
+      <p class="card-text">                    
         <form action="{{ route('productos.store')}}" method="POST">
           @csrf
           
           <label for="">Categoria</label>
-          <select name="categoria_id">
-                  @foreach(datos as $dato)
-                     <option  value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
+          <select name="categorias_id">
+                  @foreach($categorias as $item)
+                     <option  value="{{ $item->id }}">{{ $item->categoria}}</option>
                   @endforeach
-               </select> 
-            <label for="">Marca</label>
-            <select name="marcas_id" id="input" class="form-control" required>
-            <option value=""></option>
-          </select>
+               </select><br><br>
             <label for="">Producto</label>
-            <input type="text" name="productos" class="form-control" required>
-            <label for="">Imagen</label>
-            <input type="file" name="image" class="form-control" required>
+            <input type="text" name="producto" class="form-control" required><br>
             <label for="">cantidad</label>
             <input type="text" name="cantidad" class="form-control" required>
             <label for="">Cantidad Minima</label>
@@ -39,7 +33,6 @@
             <button class="btn btn-primary">Agregar</button>
         </form>
       </p>
-    
     </div>
   </div>
 

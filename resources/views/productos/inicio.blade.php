@@ -22,9 +22,7 @@
             <table class="table table-sm table-bordered">
                 <thead>
                 <th>Categoria</th>
-                    <th>Marca</th>
                     <th>Producto</th>
-                    <th>Imagen</th>
                     <th>cantidad</th>
                     <th>Cantidad Minima</th>
                     <th>Estado</th>
@@ -35,16 +33,14 @@
                 <tbody>
                     @foreach ($datos as $item)
                     <tr>
-                        <td>{{$productos->categorias_id}}</td>
-                        <td>{{$productos->marcas_id}}</td>
-                        <td>{{$productos->producto}}</td>
-                        <td>{{$productos->image}}</td>
-                        <td>{{$productos->cantidad}}</td>
-                        <td>{{$productos->cantidad_minima}}</td>
-                        <td>{{$productos->estado}}</td>
-                        <td>{{$productos->numero_lote}}</td>
-                        <td>{{$productos->fecha_expiracion}}</td>
-                        <td>{{$productos->precio_venta}}</td>
+                        <td>{{$item->categorias_id}}</td>
+                        <td>{{$item->producto}}</td>
+                        <td>{{$item->cantidad}}</td>
+                        <td>{{$item->cantidad_minima}}</td>
+                        <td>{{$item->estado}}</td>
+                        <td>{{$item->numero_lote}}</td>
+                        <td>{{$item->fecha_expiracion}}</td>
+                        <td>{{$item->precio_venta}}</td>
                         <td>
                             <form action="{{ route("productos.edit", $item->id)}}" method="GET">
                                 <button class="btn btn-warning btn-sm">Editar</button>
