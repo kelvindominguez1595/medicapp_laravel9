@@ -10,7 +10,7 @@ class ProductosController extends Controller
 {
     public function index()
     {
-        //pagina de inicio
+        //pagina de inicio222
         $datos = Productos::all();
         return view('productos/inicio', compact('datos'));
     }
