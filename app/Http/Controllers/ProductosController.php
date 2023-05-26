@@ -3,83 +3,97 @@
 namespace App\Http\Controllers;
 
 use App\Models\Productos;
+use App\Models\Categorias;
 use Illuminate\Http\Request;
 
 class ProductosController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        //pagina de inicio222
+        $datos = Productos::all();
+        return view('productos/inicio', compact('datos'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function create()
     {
-        //
+       //form agregar datos
+       $categorias = Categorias::all();
+       return view('productos/agregar', compact('categorias'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    
     public function store(Request $request)
     {
-        //
+
+        //guardar datos bd
+        $categorias_id = $request->categorias_id;
+        $producto = $request->producto;
+        $cantidad = $request->cantidad;
+        $cantidad_minima = $request->cantidad_minima;
+        $estado = $request->estado;
+        $numero_lote = $request->numero_lote;
+        $fecha_expiracion = $request->fecha_expiracion;
+        $precio_venta = $request->precio_venta;
+
+        $productos = new Productos;
+       
+        $productos->categorias_id = $categorias_id;
+        $productos->producto = $producto;
+        $productos->cantidad = $cantidad;
+        $productos->cantidad_minima = $cantidad_minima;
+        $productos->estado = $estado;
+        $productos->numero_lote = $numero_lote;
+        $productos->fecha_expiracion = $fecha_expiracion;
+        $productos->precio_venta = $precio_venta;
+        $productos->save();
+
+        return redirect()->route("productos.index")->with("success", "Agregado con exito");
+
+        
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Productos  $productos
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Productos $productos)
+    
+    public function show($id)
     {
-        //
+        //listar datos de las tablas
+        $productos = Productos::find($id);
+        return view('productos/eliminar', compact('productos'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Productos  $productos
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Productos $productos)
+
+    public function edit($id)
     {
-        //
+        //sirve para traer los datos a editar
+        $categorias = Categorias::all();
+        $productos = Productos::find($id);
+        return view('productos/actualizar', compact('productos', 'categorias'));
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Productos  $productos
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Productos $productos)
+   
+    public function update(Request $request, $id)
     {
-        //
+        //actualiza llos datos en la bd
+        $productos = Productos::find($id);
+        $productos->categorias_id = $request->categorias_id;
+        $productos->producto = $request->producto;
+        $productos->cantidad = $request->cantidad;
+        $productos->cantidad_minima = $request->cantidad_minima;
+        $productos->estado = $request->estado;
+        $productos->numero_lote = $request->numero_lote;
+        $productos->fecha_expiracion = $request->fecha_expiracion;
+        $productos->precio_venta = $request->precio_venta;
+        $productos->save();
+        return redirect()->route("productos.index")->with("success", "Agregado con exito");
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Productos  $productos
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Productos $productos)
+    public function destroy($id)
     {
-        //
+        //elimina los datos
+        $productos = Productos::find($id);
+        $productos->delete();
+        return redirect()->route("productos.index")->with("success", "Eliminado con exito");
     }
 }
