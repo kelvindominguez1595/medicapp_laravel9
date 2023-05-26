@@ -16,9 +16,7 @@ return new class extends Migration
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('categorias_id');
-            $table->unsignedBigInteger('marcas_id');
             $table->string('producto');
-            $table->string('image');
             $table->integer('cantidad');
             $table->integer('cantidad_minima');
             $table->boolean('estado');
@@ -26,7 +24,6 @@ return new class extends Migration
             $table->date('fecha_expiracion');
             $table->double('precio_venta', 20, 6);
             $table->foreign('categorias_id')->references('id')->on('categorias')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('marcas_id')->references('id')->on('marcas')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
