@@ -18,7 +18,9 @@ class DatabaseSeeder extends Seeder
             CategoriasSeeder::class,
             MarcasSeeder::class,
             GenerosSeeder::class,
-            ProductosSeeder::class
+            PermissionTableSeeder::class,
+            ProductosSeeder::class,
+            UserSeeder::class,
         ]);
     }
 }
