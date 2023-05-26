@@ -51,9 +51,11 @@ class GenerosController extends Controller
      * @param  \App\Models\Generos  $generos
      * @return \Illuminate\Http\Response
      */
-    public function show(Generos $generos)
+    public function show($id)
     {
         //
+        $generos = Generos::find($id);
+        return view('generos.eliminar', compact('generos'));
     }
 
     /**

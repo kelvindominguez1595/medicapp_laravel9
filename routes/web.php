@@ -5,8 +5,10 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\GenerosController;
 use App\Http\Controllers\ProveedoresController;
+use App\Http\Controllers\ReservasController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ProductosController;
+
 
 use Illuminate\Support\Facades\Route;
 use Spatie\Permission\Models\Role;
@@ -40,10 +42,20 @@ Route::resource('/productos', ProductosController::class );
 Route::get('/generos', [GenerosController::class, 'index'])->name('generos.index'); // listar
 Route::get('/generos/create', [GenerosController::class, 'create'])->name('generos.create'); // form crear
 Route::post('/generos/store', [GenerosController::class, 'store'])->name('generos.store'); // functGuardar
+Route::get('/generos/{id}', [GenerosController::class, 'show'])->name('generos.show');
 Route::delete('generos/destroy/{id}', [GenerosController::class, 'destroy'])->name('generos.destroy'); // eliminar
 Route::get('generos/edit/{id}', [GenerosController::class, 'edit'])->name('generos.edit'); // vistActualizar
 Route::put('generos/update/{id}', [GenerosController::class, 'update'])->name('generos.update'); // functActualizar
 Route::resource('categorias', CategoriaController::class);
+
+
+//RUTAS PARA CITAS
+Route::get('/reservas', [ReservasController::class, 'index'])->name('reservas.index'); // listar
+Route::post('/reservas/store', [ReservasController::class, 'store'])->name('reservas.store'); // guardar
+Route::get('/reservas/edit/{id}', [ReservasController::class, 'edit'])->name('reservas.edit'); // vistActualizar
+Route::get('/reservas/{id}', [ReservasController::class, 'show'])->name('reservas.show');
+Route::put('/reservas/update/{id}', [ReservasController::class, 'update'])->name('reservas.update'); // functActualizar
+Route::delete('/reservas/destroy/{id}', [ReservasController::class, 'destroy'])->name('reservas.destroy');
 
 // RUTAS PARA USUARIOS
 Route::get('/usuarios', [UserController::class, 'index'])->name('usuarios.index'); // listar
@@ -55,6 +67,3 @@ Route::get('/roles', [RoleController::class, 'index'])->name('roles.index'); // 
 Route::get('/roles/create', [RoleController::class, 'create'])->name('roles.index'); // form crea
 Route::get('roles/edit/{id}', [RoleController::class, 'edit'])->name('roles.index'); // vistActualizar
 });
-
-
-
