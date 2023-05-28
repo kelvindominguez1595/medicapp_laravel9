@@ -8,6 +8,7 @@ use App\Http\Controllers\ProveedoresController;
 use App\Http\Controllers\ReservasController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ProductosController;
+use App\Http\Controllers\RecetaController;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -65,4 +66,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/roles', [RoleController::class, 'index'])->name('roles.index'); // listar
     Route::get('/roles/create', [RoleController::class, 'create'])->name('roles.index'); // form crea
     Route::get('roles/edit/{id}', [RoleController::class, 'edit'])->name('roles.index'); // vistActualizar
+    Route::get('/receta/{id}', [RecetaController::class, 'index'])->name('receta');
+    Route::get('/verreceta/{id}', [RecetaController::class, 'verreceta'])->name('verreceta');
+    Route::post('/receta', [RecetaController::class, 'crearpdf'])->name('receta');
 });

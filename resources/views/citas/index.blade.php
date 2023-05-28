@@ -16,6 +16,7 @@
                         @endif
                         <div class="card text-dark bg-light">
                             <h5 class="card-header">LISTADO DE CITAS</h5>
+
                             <div class="card-body">
                                 <table class="table table-hover" style="text-align: center;">
                                     <thead>
@@ -44,6 +45,10 @@
                                                     @endif
                                                 @endforeach
                                                 <td>
+                                                    <a href="{{ url('/receta/' . $item->id) }}" target="_blank"
+                                                        class="btn btn-success m-2">Agregar Receta</a>
+                                                    <a href="{{ url('/verreceta/' . $item->id) }}" target="_blank"
+                                                        class="btn btn-primary m-2">Ver Receta</a>
                                                     <form action="{{ route('reservas.edit', $item->id) }}" method="GET">
                                                         <button class="btn btn-warning btn-sm">Editar</button>
                                                     </form>
