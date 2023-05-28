@@ -18,9 +18,8 @@ class ProductosSeeder extends Seeder
     {
         $productos = new Productos();
         $productos->categorias_id = 1;
-        $productos->marcas_id = 1;
+        $productos->proveedores_id = 1;
         $productos->producto = Str::random(100);
-        $productos->image = Str::random(100);
         $productos->cantidad = 10;
         $productos->cantidad_minima = 4;
         $productos->estado = 0;

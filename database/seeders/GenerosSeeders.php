@@ -6,7 +6,7 @@ use App\Models\Generos;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class GenerosSeeder extends Seeder
+class GenerosSeeders extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,12 +15,11 @@ class GenerosSeeder extends Seeder
      */
     public function run()
     {
-        $generos = new Generos();
-        $generos->genero = 'Hombre';
-        $generos->save();
-
-        $generos = new Generos();
-        $generos->genero = 'Mujer';
-        $generos->save();
+        $ge = new Generos();
+        $ge->genero = 'Hombre';
+        $ge->save();
+        $ge = new Generos();
+        $ge->genero = 'Mujer';
+        $ge->save();
     }
 }
