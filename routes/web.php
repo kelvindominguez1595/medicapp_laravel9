@@ -23,11 +23,9 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])
 
 
 Route::group(['middleware' => ['auth']], function() {
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
-    Route::get('/index', [ProveedoresController::class, 'index'])->name('proveedores.index');
-
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
     // RUTAS PARA PROVEEDORES
-    Route::get('/', [ProveedoresController::class, 'index'])->name('proveedores.index');
+    Route::get('/proveedores', [ProveedoresController::class, 'index'])->name('proveedores.index');
 
     Route::get('/create', [ProveedoresController::class, 'create'])->name('proveedores.create');
     Route::get('/edit/{id}', [ProveedoresController::class, 'edit'])->name('proveedores.edit');
