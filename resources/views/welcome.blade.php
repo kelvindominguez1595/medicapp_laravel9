@@ -2,7 +2,7 @@
 @section('content')
 
 <head>
-    <title>Navbar con color de fondo en Laravel</title>
+    <title>Navbar con color de fondo en Laravel </title>
     <link href="{{ asset('css/fondo.css') }}" rel="stylesheet">
 </head>
 
