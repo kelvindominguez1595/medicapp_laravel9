@@ -6,7 +6,7 @@
     <link href="{{ asset('css/fondo.css') }}" rel="stylesheet">
 </head>
 
-<h2>¡BIENVENIDOS A TU APPMEDIC! </h2> 
+<h2>¡BIENVENIDOS A TU APPMEDIC!</h2> 
 <div class="col-sm-12 d-flex justify-content-center" style="position:relative">
 <img src="{{ asset('image/logoAPPMEDIC.png') }}" class="img img-fluid" alt="" class="navbar-logo" style="width: 250px; height: 250px;">            
 </div>
