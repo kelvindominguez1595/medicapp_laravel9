@@ -16,7 +16,8 @@
             <div class="col-sm-12 d-flex justify-content-center" style="position:relative">
                 <h4 style="position: absolute; top: 10;">MISIÓN</h4>
                 <p style="margin-top: 30px;">
-                    Brindar una atención médico-hospitalaria a nuestros pacientes y usuarios, <br> con los más altos estándares de calidad integral, <br>
+                    Brindar una atención médico-hospitalaria a nuestros pacientes y usuarios, 
+                    <br> con los más altos estándares de calidad integral, <br>
                     buscando siempre exceder sus expectativas y fomentando <br>
                     el desarrollo de una cultura organizacional excelente.
                 </p>
