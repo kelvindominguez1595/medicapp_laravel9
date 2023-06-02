@@ -17,7 +17,7 @@ class CategoriaController extends Controller
     {
         return view("Categorias.create");
     }
-    //actualizar registro??
+  
     public function store(Request $request)
     {
         $request->validate([
